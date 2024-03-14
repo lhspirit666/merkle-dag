@@ -25,4 +25,5 @@ func Add(store KVStore, node Node, h hash.Hash) []byte {
 		return store.Put(h.Sum(nil))
 	}
 	return nil
+	
 }
