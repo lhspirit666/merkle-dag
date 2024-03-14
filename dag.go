@@ -85,6 +85,7 @@ func StoreDir(store KVStore, dir Dir, h hash.Hash) *Object {
 			treeObject.Data = append(treeObject.Data, []byte(typeName)...)
 		}
 	}
+	
 	jsonMarshal, _ := json.Marshal(treeObject)
 	hash := calculateHash(jsonMarshal, h)
 	store.Put(hash, jsonMarshal)
