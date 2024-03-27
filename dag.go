@@ -16,6 +16,17 @@ type Object struct {
 	Data  []byte
 }
 
+type Link struct {
+	Name string
+	Hash []byte
+	Size int
+}
+
+type Object struct {
+	Links []Link
+	Data  []byte
+}
+
 func Add(store KVStore, node Node, h hash.Hash) []byte {
 	switch node.Type() {
 	case DIR:
